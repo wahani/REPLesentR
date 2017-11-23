@@ -1,0 +1,11 @@
+Package: slider
+Title: Presentations in the REPL
+Version: 0.0.1
+Authors@R: person("Sebastian", "LastWarnholz", email = "wahani@gmail.com", role
+= c("aut", "cre"))
+Description: It is simply fun and a bit nerdy to do presentations directly in
+  the REPL. Also it can be quite useful.
+Depends: R (>= 3.4.2)
+License: MIT | file LICENSE
+Encoding: UTF-8
+LazyData: true
