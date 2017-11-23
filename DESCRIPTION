@@ -5,7 +5,9 @@ Authors@R: person("Sebastian", "LastWarnholz", email = "wahani@gmail.com", role 
 Description: It is simply fun and a bit nerdy to do presentations directly in
   the REPL. Also it can be quite useful.
 Depends: R (>= 3.4.2)
+Imports: modules, dat
+Suggests: testthat
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Suggests: testthat
+RoxygenNote: 6.0.1
