@@ -4,7 +4,7 @@
 \alias{Presentation}
 \title{Create a presentation}
 \usage{
-Presentation(fileName, read, render, slideDeck)
+Presentation(fileName, read, render, slideDeck, evaluate)
 }
 \arguments{
 \item{fileName}{(fileName)}

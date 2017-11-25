@@ -8,16 +8,22 @@ Slide <- function(rawText, number = NULL, totalNumber = NULL) {
   modules::module({
 
     .extractCode <- function(rawText) {
-      pos <- grep("&nbsp;", rawText)
+      pos <- grep("//code", rawText)
       flatmap(pos, function(p) {
-        s <- extract(rawText, (p + 1):length(rawText))
+        s <- extract(rawText, (p + 2):length(rawText))
         posWithCode <- grep(" {4}", s)
-        extract(s, posWithCode == seq_along(posWithCode))
+        posWithCode <- extract(posWithCode, posWithCode == seq_along(posWithCode))
+        extract(trimws(s), posWithCode)
       })
     }
 
+    .extractContent <- function(rawText) {
+      pos <- grep("^//code$", rawText)
+      extract(rawText, -c(pos, pos + 1))
+    }
+
     format <- "default"
-    content <- rawText
+    content <- .extractContent(rawText)
     number <- number
     totalNumber <- totalNumber
     code <- .extractCode(rawText)

@@ -27,12 +27,15 @@ email: wahani@gmail.com
     - continue to work in the REPL
 - Since we are in the REPL we do not get a whole lot of formating options
 
+
+
 # Start a presentation
 
 - We start a presentation by
     - converting the rmarkdown document
     - and *loading* the presentation
 
+//code
 ```{r}
 if (FALSE) {
   presi <- slider::loadPresentation("my-presentation.Rmd")
@@ -53,3 +56,30 @@ if (FALSE) {
     - `l` -- last slide
     - `?` -- see this list
     - `q` -- quit
+
+
+
+# Evaluation of code
+
+//code
+```{r}
+x <- 1
+```
+
+- Enumeration
+    - With some indent
+- More code:
+
+//code
+```{r}
+y <- 2
+```
+
+# Some more code
+
+And text...
+
+//code
+```{r}
+z <- 3
+```
