@@ -12,4 +12,11 @@ testthat::test_that("", {
     testthat::expect_true(all(nchar(renderInformation) == 11))
   })
 
+  modules::extend(render, {
+    slide <- Slide(c("a", "b", "c", "d"))
+    renderInformation <- prepare(slide)
+    testthat::expect_true(length(renderInformation) == 6)
+    testthat::expect_true(all(nchar(renderInformation) == 11))
+  })
+
 })
