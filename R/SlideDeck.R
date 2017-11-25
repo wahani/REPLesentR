@@ -7,7 +7,7 @@
 SlideDeck <- function(slideSep = rep("", 3), newSlide = Slide) {
   modules::module({
 
-    export("new")
+    modules::export("new")
 
     new <- function(rawText) {
       slideDeck <- splitRawTextIntoSlides(rawText, slideSep)

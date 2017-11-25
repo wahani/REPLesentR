@@ -4,7 +4,7 @@
 \alias{Slide}
 \title{Create Slide}
 \usage{
-Slide(rawText, number, totalNumber)
+Slide(rawText, number = NULL, totalNumber = NULL)
 }
 \arguments{
 \item{rawText}{(character)}
