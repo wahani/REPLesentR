@@ -6,7 +6,7 @@ Evaluate <- function(envir = .GlobalEnv, quiet = FALSE) {
 
     slide <- function(slide) {
       if (is.null(slide$code)) return(NULL)
-      if (!quiet) lapply(paste0(trimws(slide$code), collapse = "\n"), cat)
+      if (!quiet) lapply(paste0(slide$code, "\n"), cat)
       try(eval(parse(text = slide$code), envir = envir))
     }
 

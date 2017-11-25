@@ -13,12 +13,14 @@ Slide <- function(rawText, number = NULL, totalNumber = NULL) {
         s <- extract(rawText, (p + 2):length(rawText))
         posWithCode <- grep(" {4}", s)
         posWithCode <- extract(posWithCode, posWithCode == seq_along(posWithCode))
-        extract(trimws(s), posWithCode)
+        s <- gsub("^ {4}", "", s)
+        extract(s, posWithCode)
       })
     }
 
     .extractContent <- function(rawText) {
       pos <- grep("^//code$", rawText)
+      if (length(pos) == 0) return(rawText)
       extract(rawText, -c(pos, pos + 1))
     }
 
