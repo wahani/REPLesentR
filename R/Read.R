@@ -4,14 +4,14 @@
 Read <- function() {
   modules::module({
 
-    modules::export("rmd", "md", "plain")
+    modules::export("rmd", "md", "plain", "auto")
 
-    plain <- function(fileName) {
+    plain <- function(fileName, ...) {
       stopifnot(file.exists(fileName))
       readLines(fileName)
     }
 
-    md <- function(fileName) {
+    md <- function(fileName, ...) {
       stopifnot(file.exists(fileName))
       plainFile <- knitr::pandoc(fileName, format = "plain")
       plain(plainFile)
@@ -23,6 +23,11 @@ Read <- function() {
       mdFile <- sub(regex, "md", fileName)
       knitr::knit(fileName, mdFile, ...)
       md(mdFile)
+    }
+
+    auto <- function(fileName, ...) {
+      stopifnot(file.exists(fileName))
+      get(tolower(tools::file_ext(fileName)), mode = "function")(fileName, ...)
     }
 
   })

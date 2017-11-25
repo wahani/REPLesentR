@@ -1,2 +1,2 @@
-#' @importFrom dat flatmap map replace extract
+#' @importFrom dat flatmap map replace extract extract2
 NULL

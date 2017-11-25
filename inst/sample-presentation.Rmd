@@ -34,12 +34,12 @@ email: wahani@gmail.com
     - and *loading* the presentation
 
 ```{r}
-presi <- slider::loadPresentation("my-presentation.Rmd")
-
-presi$start()
+if (FALSE) {
+  presi <- slider::loadPresentation("my-presentation.Rmd")
+  presi$start()
+}
 ```
 
-    - more bullets
 
 # Presentation mode
 
