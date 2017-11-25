@@ -4,6 +4,7 @@
 #' @param read (Read)
 #' @param render (Render)
 #' @param slideDeck (SlideDeck)
+#' @param evaluate (Evaluate)
 #'
 #' @export
 Presentation <- function(fileName, read, render, slideDeck, evaluate) {

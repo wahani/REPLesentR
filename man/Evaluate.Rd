@@ -6,6 +6,11 @@
 \usage{
 Evaluate(envir = .GlobalEnv, quiet = FALSE)
 }
+\arguments{
+\item{envir}{(environment)}
+
+\item{quiet}{(logical)}
+}
 \description{
 Module for evaluation
 }

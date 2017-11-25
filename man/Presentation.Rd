@@ -14,6 +14,8 @@ Presentation(fileName, read, render, slideDeck, evaluate)
 \item{render}{(Render)}
 
 \item{slideDeck}{(SlideDeck)}
+
+\item{evaluate}{(Evaluate)}
 }
 \description{
 Create a presentation

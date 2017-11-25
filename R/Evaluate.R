@@ -1,5 +1,8 @@
 #' Module for evaluation
 #'
+#' @param envir (environment)
+#' @param quiet (logical)
+#' 
 #' @export
 Evaluate <- function(envir = .GlobalEnv, quiet = FALSE) {
   modules::module({
