@@ -4,10 +4,12 @@
 \alias{Slide}
 \title{Create Slide}
 \usage{
-Slide(rawText)
+Slide(rawText, number, totalNumber)
 }
 \arguments{
 \item{rawText}{(character)}
+
+\item{number, totalNumber}{(integer)}
 }
 \description{
 Create Slide
