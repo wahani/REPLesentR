@@ -2,7 +2,7 @@ testthat::context("Evaluate")
 
 testthat::test_that("", {
   e <- new.env(parent = environment())
-  fname <- system.file("sample-presentation.Rmd", package = "slider")
+  fname <- system.file("example.Rmd", package = "slider")
   slideDeck <- SlideDeck()$new(Read()$auto(fname, quiet = TRUE))
   evaluate <- Evaluate(e, quiet = TRUE)
   evaluate$slideDeck(slideDeck)

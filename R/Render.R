@@ -1,7 +1,11 @@
-#' Create Render
+#' Render Module
 #'
-#' @param layout (Layout)
-#' @param screen (Screen)
+#' This module should not be used interactively. See \link{newPresentation}
+#' instead. The module handles everything around printing a slide to the
+#' console.
+#'
+#' @param layout (Layout) an instance of \link{Layout}
+#' @param screen (Screen) an instance of \link{Screen}
 #'
 #' @export
 Render <- function(layout, screen) {

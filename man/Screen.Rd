@@ -2,13 +2,14 @@
 % Please edit documentation in R/Screen.R
 \name{Screen}
 \alias{Screen}
-\title{Create Screen}
+\title{Screen Module}
 \usage{
 Screen(.width = NULL, .height = NULL)
 }
 \arguments{
-\item{.width, .height}{(NULL | integer)}
+\item{.width, .height}{(NULL | integer) see \link{newPresentation}.}
 }
 \description{
-Create Screen
+A list with two functions for determining the height and width of the space
+in which to print the slide. The two methods do not have any arguments. You do not need to use this function interactively: see \link{newPresentation}.
 }

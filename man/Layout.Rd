@@ -2,10 +2,16 @@
 % Please edit documentation in R/Layout.R
 \name{Layout}
 \alias{Layout}
-\title{Create Layout}
+\title{Layout Module}
 \usage{
-Layout()
+Layout(border = "*", padding = 1)
+}
+\arguments{
+\item{border}{(character) see \link{newPresentation}.}
+
+\item{padding}{(integer) see \link{newPresentation}.}
 }
 \description{
-Create Layout
+The function returns a list with it's arguments as elements. You do not need
+to use this function interactively: see \link{newPresentation}.
 }

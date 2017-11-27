@@ -2,15 +2,17 @@
 % Please edit documentation in R/Render.R
 \name{Render}
 \alias{Render}
-\title{Create Render}
+\title{Render Module}
 \usage{
 Render(layout, screen)
 }
 \arguments{
-\item{layout}{(Layout)}
+\item{layout}{(Layout) an instance of \link{Layout}}
 
-\item{screen}{(Screen)}
+\item{screen}{(Screen) an instance of \link{Screen}}
 }
 \description{
-Create Render
+This module should not be used interactively. See \link{newPresentation}
+instead. The module handles everything around printing a slide to the
+console.
 }

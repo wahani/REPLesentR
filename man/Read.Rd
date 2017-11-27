@@ -2,10 +2,16 @@
 % Please edit documentation in R/Read.R
 \name{Read}
 \alias{Read}
-\title{Read in Presentation}
+\title{Read Module}
 \usage{
 Read()
 }
 \description{
-Read in Presentation
+Read creates a new module with one method: 'auto'. This method selects an
+appropriate procedure for reading in the content of the file depending on the
+file extension. This function should not be necessary to call interactively,
+please go to the docs for \link{newPresentation}.
+}
+\seealso{
+\link{newPresentation}
 }

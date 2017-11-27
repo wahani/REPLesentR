@@ -2,21 +2,39 @@
 % Please edit documentation in R/Presentation.R
 \name{Presentation}
 \alias{Presentation}
-\title{Create a presentation}
+\title{Presentation Module}
 \usage{
 Presentation(fileName, read, render, slideDeck, evaluate)
 }
 \arguments{
-\item{fileName}{(fileName)}
+\item{fileName}{(fileName) see \link{newPresentation}.}
 
-\item{read}{(Read)}
+\item{read}{(function) a function which knows how to read in \code{fileName}.}
 
-\item{render}{(Render)}
+\item{render}{(Render) see \link{Render}.}
 
-\item{slideDeck}{(SlideDeck)}
+\item{slideDeck}{(SlideDeck) see \link{SlideDeck}.}
 
-\item{evaluate}{(Evaluate)}
+\item{evaluate}{(Evaluate) see \link{Evaluate}.}
 }
 \description{
-Create a presentation
+The module to put all components together. If this is your first contact: see
+\link{newPresentation}. This module provides methods to construct and
+navigate inside presentations. All logic concerning rendering, parsing
+slides, evaluation of code, etc. is provided by other modules and may be
+modified. If you have questions feel free to file an issue on GitHub, should
+this ever be an issue anyways.
+}
+\examples{
+## As an example consider the implementation of newPresentation:
+newPresentation <- function(fileName, width = NULL, height = NULL, border = "*",
+                           padding = 1, slideSep = rep("", 3)) {
+  Presentation(
+    fileName,
+    Read()$auto,
+    Render(Layout(border, padding), Screen(width, height)),
+    SlideDeck(slideSep),
+    Evaluate()
+  )
+}
 }

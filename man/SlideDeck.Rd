@@ -2,15 +2,18 @@
 % Please edit documentation in R/SlideDeck.R
 \name{SlideDeck}
 \alias{SlideDeck}
-\title{Create a slide deck}
+\title{SlideDeck Module}
 \usage{
 SlideDeck(slideSep = rep("", 3), newSlide = Slide)
 }
 \arguments{
-\item{slideSep}{(character) what is used to indicate a slide break}
+\item{slideSep}{(character) see \link{newPresentation}.}
 
-\item{newSlide}{(Slide) the 'Slide' constructor}
+\item{newSlide}{(Slide) see \link{Slide}; the constructor function for a
+single slide.}
 }
 \description{
-Create a slide deck
+This module has one method 'new' with one argument 'rawText' and knows how to
+convert the raw text from a file into a slide deck (a list of slides). You do
+not need to use this module interactively: see \link{newPresentation}.
 }

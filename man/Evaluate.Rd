@@ -2,15 +2,18 @@
 % Please edit documentation in R/Evaluate.R
 \name{Evaluate}
 \alias{Evaluate}
-\title{Module for evaluation}
+\title{Evaluation Module}
 \usage{
 Evaluate(envir = .GlobalEnv, quiet = FALSE)
 }
 \arguments{
-\item{envir}{(environment)}
+\item{envir}{(environment) the environment in which to evaluate.}
 
-\item{quiet}{(logical)}
+\item{quiet}{(logical) whether to print the code being evaluated prior to
+evaluation.}
 }
 \description{
-Module for evaluation
+This module knows how to evaluate code on a slide. It has two methods:
+'slide' and 'slideDeck' consuming either a Slide or SlideDeck. You do not
+need to use this interactively: see \link{newPresentation}.
 }

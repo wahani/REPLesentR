@@ -1,10 +1,17 @@
-#' Read in Presentation
+#' Read Module
+#'
+#' Read creates a new module with one method: 'auto'. This method selects an
+#' appropriate procedure for reading in the content of the file depending on the
+#' file extension. This function should not be necessary to call interactively,
+#' please go to the docs for \link{newPresentation}.
+#'
+#' @seealso \link{newPresentation}
 #'
 #' @export
 Read <- function() {
   modules::module({
 
-    modules::export("rmd", "md", "plain", "auto")
+    modules::export("auto")
 
     plain <- function(fileName, ...) {
       stopifnot(file.exists(fileName))
@@ -27,7 +34,9 @@ Read <- function() {
 
     auto <- function(fileName, ...) {
       stopifnot(file.exists(fileName))
-      get(tolower(tools::file_ext(fileName)), mode = "function")(fileName, ...)
+      fileExt <- tolower(tools::file_ext(fileName))
+      stopifnot(fileExt %in% c("plain", "md", "rmd"))
+      get(fileExt, mode = "function")(fileName, ...)
     }
 
   })
