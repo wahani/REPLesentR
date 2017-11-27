@@ -1,17 +1,7 @@
+library(slider)
 
-read <- slider::Read()
-rawText <- read$rmd("tests/test-presentation.Rmd")
-
-slideDeck(rawText)
-
-
-presi <- Presentation(
-  "inst/sample-presentation.plain",
-  Read(),
-  Render(Layout(), Screen(.height = 22)),
-  SlideDeck(),
-  Evaluate()
-)
-
+fileName <- system.file("example.Rmd", package = "slider")
+fileName <- "inst/example.Rmd"
+readLines(fileName)
+presi <- newPresentation(fileName)
 presi$start()
-

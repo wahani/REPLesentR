@@ -1,0 +1,49 @@
+---
+title: Presentation inside the REPL
+author: Sebastian Warnholz
+email: wahani@gmail.com
+---
+
+```{r eval = TRUE, echo = FALSE}
+knitr::opts_chunk$set(eval = FALSE)
+```
+
+
+# //empty
+
+//center SLIDER -- PRESENTATIONS INSIDE THE REPL
+
+
+
+# //empty
+
+//center Use R-Markdown or plain text files
+
+
+# Write code
+
+//code
+```{r}
+cat("Code evaluated!\n")
+```
+
+
+# Make great plots with 'txtplot'!
+
+```{r echo = FALSE, eval = TRUE, comment = NA}
+set.seed(2)
+x <- rnorm(20)
+y <- 1 + x * 5 + rnorm(20)
+txtplot::txtplot(x, y)
+```
+
+
+# //empty
+
+//center Beautiful!
+
+
+# Try it
+
+... at https://github.com/wahani/slider
+
