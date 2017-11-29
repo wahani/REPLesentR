@@ -9,16 +9,9 @@ knitr::opts_chunk$set(eval = FALSE)
 ```
 
 
-# //empty
+# //center SLIDER -- PRESENTATIONS INSIDE THE REPL
 
-//center SLIDER -- PRESENTATIONS INSIDE THE REPL
-
-
-
-# //empty
-
-//center Use R-Markdown or plain text files
-
+# //center Use R-Markdown or plain text files
 
 # Write code
 
@@ -28,7 +21,7 @@ cat("Code evaluated!\n")
 ```
 
 
-# Make great plots with 'txtplot'!
+# //center Make great plots with 'txtplot'!
 
 ```{r echo = FALSE, eval = TRUE, comment = NA}
 set.seed(2)
@@ -38,12 +31,10 @@ txtplot::txtplot(x, y)
 ```
 
 
-# //empty
-
-//center Beautiful!
+# //center Beautiful!
 
 
-# Try it
+# //center Try it
 
-... at https://github.com/wahani/slider
+//center ... at https://github.com/wahani/slider
 

@@ -26,8 +26,20 @@ Render <- function(layout, screen) {
     prepare.default <- function(slide) {
       content <- slide$content
       content <- correctHeight(content)
-      content <- wrapBorder(leftAlign(content))
+      content <- wrapBorder(align(content, attr(slide$content, "lineFormats")))
       c(border(), padding(), content, padding(), border())
+    }
+
+    prepare.center <- function(slide) {
+      missingLines <- floor((contentHeight() - length(slide$content)) / 2)
+      if (missingLines < 0) return(prepare.default(slide))
+      missingLines <- rep("", missingLines)
+      content <- slide$content
+      content <- c(missingLines, content, missingLines)
+      attr(content, "lineFormats") <- c(
+        rep("left", length(missingLines)), attr(slide$content, "lineFormats"))
+      slide$content <- content
+      prepare.default(slide)
     }
 
     wrapBorder <- function(s) {
@@ -37,8 +49,19 @@ Render <- function(layout, screen) {
       )
     }
 
-    leftAlign <- function(s) {
+    align <- function(content, format) {
+      format <- map(format, ~ get(paste0("align.", .), mode = "function"))
+      flatmap(content ~ format, f(content, format) ~ format(content))
+    }
+
+    align.left <- function(s) {
       strtrim(sprintf(paste0("%-", contentWidth(), "s"), s), contentWidth())
+    }
+
+    align.center <- function(s) {
+      missingLength <- contentWidth() - nchar(s)
+      missingWhites <- paste(rep(" ", floor(missingLength / 2)), collapse = "")
+      align(paste(missingWhites, s, missingWhites), "left")
     }
 
     correctHeight <- function(content) {
@@ -63,7 +86,7 @@ Render <- function(layout, screen) {
     }
 
     padding <- function() {
-      emptyLines <- flatmap(rep(" ", layout$padding), leftAlign)
+      emptyLines <- flatmap(rep(" ", layout$padding), ~ align(., "left"))
       wrapBorder(emptyLines)
     }
 

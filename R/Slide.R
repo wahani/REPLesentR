@@ -7,7 +7,9 @@
 Slide <- function(rawText, number = NULL, totalNumber = NULL) {
   modules::module({
 
-    .extractCode <- function(rawText) {
+    export("format", "content", "number", "totalNumber", "code")
+
+    extractCode <- function(rawText) {
       pos <- grep("//code", rawText)
       flatmap(pos, function(p) {
         s <- extract(rawText, (p + 2):length(rawText))
@@ -18,17 +20,54 @@ Slide <- function(rawText, number = NULL, totalNumber = NULL) {
       })
     }
 
-    .extractContent <- function(rawText) {
-      pos <- grep("^//code$", rawText)
+    extractContent <- function(rawText) {
+      content <- trimEmptyLines(rawText)
+      content <- rev(trimEmptyLines(rev(content)))
+      content <- removeEmptyTags(content)
+      content <- removeCodeTags(content)
+      useLineFormats(content)
+    }
+
+    trimEmptyLines <- function(rawText) {
+      pos <- Position(function(x) x != "", rawText)
+      if (pos == 1) return(rawText)
+      else extract(rawText, -(1:(pos - 1)))
+    }
+
+    removeEmptyTags <- function(rawText) {
+      pos <- grep("^//empty", rawText, ignore.case = TRUE)
+      if (length(pos) == 0) return(rawText)
+      replace(rawText, pos, "")
+    }
+
+    removeCodeTags <- function(rawText) {
+      pos <- grep("^//code$", rawText, ignore.case = TRUE)
       if (length(pos) == 0) return(rawText)
       extract(rawText, -c(pos, pos + 1))
     }
 
-    format <- "default"
-    content <- .extractContent(rawText)
+    useLineFormats <- function(content) {
+      lineFormats <- rep("left", length(content))
+      for (format in c("center")) {
+        lformat <- sprintf("^//%s ", format)
+        lineFormats <- replace(lineFormats, grep(lformat, content, TRUE), format)
+        content <- sub(lformat, "", content, TRUE)
+      }
+      attr(content, "lineFormats") <- lineFormats
+      content
+    }
+
+    extractFormat <- function(rawText) {
+      isEmpty <- any(grepl("^//CENTER", rawText))
+      if (isEmpty) "center"
+      else "default"
+    }
+
+    format <- extractFormat(rawText)
+    content <- extractContent(rawText)
     number <- number
     totalNumber <- totalNumber
-    code <- .extractCode(rawText)
+    code <- extractCode(rawText)
 
  })
 }
