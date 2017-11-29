@@ -50,6 +50,7 @@ Render <- function(layout, screen) {
     }
 
     align <- function(content, format) {
+      if (length(format) > length(content)) format <- format[seq_along(content)]
       format <- map(format, ~ get(paste0("align.", .), mode = "function"))
       flatmap(content ~ format, f(content, format) ~ format(content))
     }
