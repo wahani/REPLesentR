@@ -7,7 +7,7 @@
 Slide <- function(rawText, number = NULL, totalNumber = NULL) {
   modules::module({
 
-    export("format", "content", "number", "totalNumber", "code")
+   export("format", "content", "number", "totalNumber", "code")
 
     extractCode <- function(rawText) {
       pos <- grep("//code", rawText)
