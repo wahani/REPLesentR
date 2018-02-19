@@ -16,7 +16,8 @@ Depends: R (>= 3.4.2)
 Imports: modules, dat, tools, knitr
 Suggests:
     testthat,
-    covr
+    covr,
+    txtplot
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
