@@ -1,0 +1,52 @@
+---
+title: REPLesentR: Presentation inside the R REPL
+author: Sebastian Warnholz
+email: wahani@gmail.com
+---
+
+```{r eval = TRUE, echo = FALSE}
+knitr::opts_chunk$set(eval = FALSE)
+```
+
+# REPLesentR: Presentations inside the R REPL
+
+author: Sebastian Warnholz  
+date: `r Sys.Date()`  
+email: wahani@gmail.com  
+
+
+# Features
+
+- Tools to convert RMarkdown or plain text files into slide decks to be
+  presented inside the REPL
+- The Presentation Mode to navigate inside a presentation 
+- Evaluate code on slides
+- Integrate data visualisations using the fantastic 'txtplot' package
+- Non-Features
+    - Syntax highlighting on slides
+    - Colours on slides
+
+
+
+# Commands in Presentation Mode
+
+- `n` -- next slide
+- `p` -- previous slide
+- `f` -- first slide
+- `l` -- last slide
+- `e` -- evaluate code on slide
+- `ee` -- evaluate all code up to this slide 
+- `h` -- see this list
+- `q` -- quit Presentation Mode
+
+
+
+# Evaluation of code
+
+Try this now by typing 'e'
+
+//code
+```{r}
+hi <- "Hi"
+cat(hi)
+```

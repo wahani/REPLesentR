@@ -4,8 +4,7 @@
 #' \link{newPresentation}. This module provides methods to construct and
 #' navigate inside presentations. All logic concerning rendering, parsing
 #' slides, evaluation of code, etc. is provided by other modules and may be
-#' modified. If you have questions feel free to file an issue on GitHub, should
-#' this ever be an issue anyways.
+#' modified. If you have questions feel free to file an issue on GitHub.
 #'
 #' @param fileName (fileName) see \link{newPresentation}.
 #' @param read (function) a function which knows how to read in \code{fileName}.
@@ -52,7 +51,7 @@ Presentation <- function(fileName, read, render, slideDeck, evaluate) {
     }
 
     noSuchCommand <- function() {
-      message("command is unknown -- type 'q' to quite or 'h' for help")
+      message("command is unknown -- type 'q' to quit or 'h' for help")
       prompt()
     }
 

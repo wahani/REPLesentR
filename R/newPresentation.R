@@ -1,16 +1,21 @@
 #' Create a new presentation
 #'
-#' Creates a new instance of a presentation.
+#' Creates a new instance of a presentation. Currently it has only one method:
+#' \code{start} which is called without any arguments. It starts a presentation
+#' or resumes where you left off. A presentation runs inside your R console and
+#' the idea is to maximize the window on your screen for a presentation mode.
 #'
 #' @param fileName (character) the file containing the presentation. Currently
 #'   one of: .Rmd, md, or plain.
 #' @param width (integer) the number of columns to use. By default:
 #'   \code{options('width')}.
 #' @param height (integer) the number of rows to use. By default set to 22.
-#' @param border (character) the character user as a border.
-#' @param padding (integer) the number of whitespaces / empty rows between
+#' @param border (character) the character used as a border to frame a single
+#'   slide.
+#' @param padding (integer) the number of white-spaces / empty rows between
 #'   border and content.
-#' @param slideSep (character) how to determine a 'slide break'.
+#' @param slideSep (character) the slide separator: how to determine a 'slide
+#'   break'.
 #'
 #' @return The function returns an instance of the presentation. It has only one
 #'   method: \code{start} without any arguments. \code{start} will start the
@@ -18,9 +23,7 @@
 #'
 #' @details You can completely reconfigure or redefine parts of this package.
 #'   All components are modules and can be extended or replaced. This is just a
-#'   default configuration for a \link{Presentation} and for added flexibility
-#'   this can make sense; for plug and play use this function here is more user
-#'   friendly.
+#'   default configuration for a \link{Presentation}.
 #'
 #' To convert from Rmd to md formats \code{knitr::knit} is used. To convert from
 #'   md to plain \code{knitr::pandoc(file, format = "plain")} is used. If you
@@ -33,11 +36,11 @@
 #' @examples
 #' ## Start with the example:
 #' \dontrun{
-#' fileName <- system.file("example.Rmd", package = "slider")
-#' presi <- newPresentation(fileName)
+#' fileName <- system.file("Introduction.Rmd", package = "REPLesentR")
+#' introduction <- newPresentation(fileName)
 #' ## Once we call the start method we enter 'presentation mode': type h to get
 #' ## help on navigation.
-#' presi$start()
+#' introduction$start()
 #' }
 #' @export
 newPresentation <- function(fileName, width = NULL, height = NULL, border = "*",
