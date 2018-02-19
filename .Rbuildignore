@@ -3,3 +3,4 @@
 ^\.travis\.yml$
 ^prepareRepo\.R$
 ^codecov\.yml$
+^Readme\.md$
