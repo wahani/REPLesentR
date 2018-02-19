@@ -1,5 +1,7 @@
 [![Travis-CI Build Status](https://travis-ci.org/wahani/REPLesentR.svg?branch=master)](https://travis-ci.org/wahani/REPLesentR)
+[![Coverage Status](https://img.shields.io/codecov/c/github/wahani/REPLesentR/master.svg)](https://codecov.io/github/wahani/REPLesentR?branch=master)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/REPLesentR)](https://cran.r-project.org/package=REPLesentR)
+[![Downloads](http://cranlogs.r-pkg.org/badges/REPLesentR?color=brightgreen)](http://www.r-pkg.org/pkg/REPLesentR)
 
 ## Do presentations in the R REPL
 
