@@ -36,11 +36,7 @@
 #' @examples
 #' ## Start with the example:
 #' \dontrun{
-#' fileName <- system.file("Introduction.Rmd", package = "REPLesentR")
-#' introduction <- newPresentation(fileName)
-#' ## Once we call the start method we enter 'presentation mode': type h to get
-#' ## help on navigation.
-#' introduction$start()
+#' introPresentation() # in presentation mode type 'h'
 #' }
 #' @export
 newPresentation <- function(fileName, width = NULL, height = NULL, border = "*",
@@ -52,4 +48,12 @@ newPresentation <- function(fileName, width = NULL, height = NULL, border = "*",
     SlideDeck(slideSep),
     Evaluate()
   )
+}
+
+#' @rdname newPresentation
+#' @export
+introPresentation <- function() {
+  fileName <- system.file("Introduction.Rmd", package = "REPLesentR")
+  introduction <- newPresentation(fileName)
+  introduction$start()
 }

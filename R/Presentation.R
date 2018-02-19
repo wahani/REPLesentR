@@ -29,16 +29,22 @@ Presentation <- function(fileName, read, render, slideDeck, evaluate) {
   modules::module({
 
     modules::export("start")
-    rawText <- read(fileName)
-    slideDeck <- slideDeck$new(rawText)
-    currentSlide <- CurrentSlide(length(slideDeck))
+    rawText <- slideDeckVal <- currentSlide <- NULL
+
+    init <- function() {
+      rawText <<- read(fileName)
+      slideDeckVal <<- slideDeck$new(rawText)
+      currentSlide <<- CurrentSlide(length(slideDeckVal))
+    }
+
+    init() # No reason to delay init
 
     start <- function() {
       jumpTo(currentSlide$current())
     }
 
     jumpTo <- function(pos) {
-      render$singleSlide(extract2(slideDeck, pos))
+      render$singleSlide(extract2(slideDeckVal, pos))
       prompt()
     }
 
@@ -57,7 +63,7 @@ Presentation <- function(fileName, read, render, slideDeck, evaluate) {
 
     unknown <- function(command) {
       !is.element(command, c(
-        "n", "p", "l", "f", "q", "h", "current", "e", "ee"
+        "n", "p", "l", "f", "q", "h", "current", "e", "ee", "cc"
       ))
     }
 
@@ -72,12 +78,17 @@ Presentation <- function(fileName, read, render, slideDeck, evaluate) {
       prompt()
     }
     ee <- function() {
-      evaluate$slideDeck(slideDeck[1:currentSlide$current()])
+      evaluate$slideDeckVal(slideDeckVal[1:currentSlide$current()])
       prompt()
     }
     e <- function() {
-      evaluate$slide(slideDeck[[currentSlide$current()]])
+      evaluate$slide(slideDeckVal[[currentSlide$current()]])
       prompt()
+    }
+    cc <- function() {
+      val <- currentSlide$current()
+      init()
+      jumpTo(currentSlide$set(val))
     }
 
   })

@@ -1,4 +1,5 @@
-library(testthat)
-library(slider)
+library("REPLesentR")
 
-test_check("slider")
+if (requireNamespace("testthat", quietly = TRUE)) {
+  testthat::test_check("REPLesentR")
+}

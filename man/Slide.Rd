@@ -7,10 +7,15 @@
 Slide(rawText, number = NULL, totalNumber = NULL)
 }
 \arguments{
-\item{rawText}{(character)}
+\item{rawText}{(character) the raw text from which to extract the contents,
+code etc.}
 
-\item{number, totalNumber}{(integer)}
+\item{number, totalNumber}{(NULL | integer) the total number of slides in the
+slide deck and the number of the slide in this deck.}
 }
 \description{
-Create Slide
+Constructs a list representing a single slide. \code{format}, \code{content},
+\code{number}, \code{totalNumber} and \code{code} are its elements. You
+should not need to call this constructor interactively but use
+\link{newPresentation} instead.
 }

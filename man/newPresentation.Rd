@@ -2,10 +2,13 @@
 % Please edit documentation in R/newPresentation.R
 \name{newPresentation}
 \alias{newPresentation}
+\alias{introPresentation}
 \title{Create a new presentation}
 \usage{
 newPresentation(fileName, width = NULL, height = NULL, border = "*",
   padding = 1, slideSep = rep("", 3))
+
+introPresentation()
 }
 \arguments{
 \item{fileName}{(character) the file containing the presentation. Currently
@@ -16,12 +19,14 @@ one of: .Rmd, md, or plain.}
 
 \item{height}{(integer) the number of rows to use. By default set to 22.}
 
-\item{border}{(character) the character user as a border.}
+\item{border}{(character) the character used as a border to frame a single
+slide.}
 
-\item{padding}{(integer) the number of whitespaces / empty rows between
+\item{padding}{(integer) the number of white-spaces / empty rows between
 border and content.}
 
-\item{slideSep}{(character) how to determine a 'slide break'.}
+\item{slideSep}{(character) the slide separator: how to determine a 'slide
+break'.}
 }
 \value{
 The function returns an instance of the presentation. It has only one
@@ -29,14 +34,15 @@ The function returns an instance of the presentation. It has only one
   presentation and also resume where you left.
 }
 \description{
-Creates a new instance of a presentation.
+Creates a new instance of a presentation. Currently it has only one method:
+\code{start} which is called without any arguments. It starts a presentation
+or resumes where you left off. A presentation runs inside your R console and
+the idea is to maximize the window on your screen for a presentation mode.
 }
 \details{
 You can completely reconfigure or redefine parts of this package.
   All components are modules and can be extended or replaced. This is just a
-  default configuration for a \link{Presentation} and for added flexibility
-  this can make sense; for plug and play use this function here is more user
-  friendly.
+  default configuration for a \link{Presentation}.
 
 To convert from Rmd to md formats \code{knitr::knit} is used. To convert from
   md to plain \code{knitr::pandoc(file, format = "plain")} is used. If you
@@ -49,10 +55,6 @@ For navigation inside the presentation mode, please see the examples below.
 \examples{
 ## Start with the example:
 \dontrun{
-fileName <- system.file("example.Rmd", package = "slider")
-presi <- newPresentation(fileName)
-## Once we call the start method we enter 'presentation mode': type h to get
-## help on navigation.
-presi$start()
+introPresentation() # in presentation mode type 'h'
 }
 }

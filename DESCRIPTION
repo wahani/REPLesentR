@@ -1,9 +1,8 @@
 Package: REPLesentR
 Title: Presentations in the REPL
-Version: 0.0.1
-Authors@R: person("Sebastian", "LastWarnholz", email = "wahani@gmail.com", role = c("aut", "cre"))
-Description: It is fun and also nerdy to do presentations directly in
-  the REPL. You can do your presentation in the console but write your slides in RMarkdown or any other text format. For this we provide a modular system to generate slide decks for display in the R REPL or console. This project is inspired by the REPLesent tool for presentation in the Scala REPL.
+Version: 0.1.0
+Authors@R: person("Sebastian", "Warnholz", email = "wahani@gmail.com", role = c("aut", "cre"))
+Description: You can do your presentation in the console but write your slides in RMarkdown or any other text format. For this we provide a modular system to generate slide decks for the display in the R REPL. This project is inspired by the REPLesent project for presentations in the Scala REPL.
 Depends: R (>= 3.4.2)
 Imports: modules, dat, tools, knitr
 Suggests: testthat

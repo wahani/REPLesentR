@@ -22,8 +22,7 @@ The module to put all components together. If this is your first contact: see
 \link{newPresentation}. This module provides methods to construct and
 navigate inside presentations. All logic concerning rendering, parsing
 slides, evaluation of code, etc. is provided by other modules and may be
-modified. If you have questions feel free to file an issue on GitHub, should
-this ever be an issue anyways.
+modified. If you have questions feel free to file an issue on GitHub.
 }
 \examples{
 ## As an example consider the implementation of newPresentation:

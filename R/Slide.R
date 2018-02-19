@@ -14,10 +14,10 @@
 Slide <- function(rawText, number = NULL, totalNumber = NULL) {
   modules::module({
 
-    export("format", "content", "number", "totalNumber", "code")
+    modules::export("format", "content", "number", "totalNumber", "code")
 
     extractCode <- function(rawText) {
-      pos <- grep("//code", rawText)
+      pos <- grep("^//code", rawText)
       flatmap(pos, function(p) {
         s <- extract(rawText, (p + 2):length(rawText))
         posWithCode <- grep(" {4}", s)
