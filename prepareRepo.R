@@ -1,7 +1,9 @@
-library(slider)
+library(REPLesentR)
 
-fileName <- system.file("example.Rmd", package = "slider")
-fileName <- "inst/example.Rmd"
-readLines(fileName)
-presi <- newPresentation(fileName)
-presi$start()
+
+system.file()
+
+advertise <- newPresentation(
+  system.file("advertise.Rmd", package = "REPLesentR"),
+  width = 90, height = 19)
+advertise$start()

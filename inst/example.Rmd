@@ -24,8 +24,6 @@ email: wahani@gmail.com
 - The Rmd is preprocessed with knitr:
     - take advantage of rmarkdown
     - take advantage of markdown and pandoc
-    - continue to work in the REPL
-- Since we are in the REPL we do not get a whole lot of formating options
 
 
 
