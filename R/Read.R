@@ -1,13 +1,13 @@
-#' Read Module
-#'
-#' Read creates a new module with one method: 'auto'. This method selects an
-#' appropriate procedure for reading in the content of the file depending on the
-#' file extension. This function should not be necessary to call interactively,
-#' please go to the docs for \link{newPresentation}.
-#'
-#' @seealso \link{newPresentation}
-#'
-#' @export
+# Read Module
+#
+# Read creates a new module with one method: 'auto'. This method selects an
+# appropriate procedure for reading in the content of the file depending on the
+# file extension. This function should not be necessary to call interactively,
+# please go to the docs for \link{newPresentation}.
+#
+# @seealso \link{newPresentation}
+#
+# @export
 Read <- function() {
   modules::module({
 

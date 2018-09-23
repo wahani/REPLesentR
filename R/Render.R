@@ -1,13 +1,13 @@
-#' Render Module
-#'
-#' This module should not be used interactively. See \link{newPresentation}
-#' instead. The module handles everything around printing a slide to the
-#' console.
-#'
-#' @param layout (Layout) an instance of \link{Layout}
-#' @param screen (Screen) an instance of \link{Screen}
-#'
-#' @export
+# Render Module
+#
+# This module should not be used interactively. See \link{newPresentation}
+# instead. The module handles everything around printing a slide to the
+# console.
+#
+# @param layout (Layout) an instance of \link{Layout}
+# @param screen (Screen) an instance of \link{Screen}
+#
+# @export
 Render <- function(layout, screen) {
   modules::module({
 
@@ -44,8 +44,11 @@ Render <- function(layout, screen) {
 
     wrapBorder <- function(s) {
       paste0(
-        layout$border, rep(" ", layout$padding), s,
-        rep(" ", layout$padding), layout$border, "\n"
+        layout$border,
+        paste0(rep(" ", layout$padding), collapse = ""),
+        s,
+        paste0(rep(" ", layout$padding), collapse = ""),
+        layout$border, "\n"
       )
     }
 

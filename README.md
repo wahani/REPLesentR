@@ -5,7 +5,9 @@
 
 ## Do presentations in the R REPL
 
-This package provides tools to do presentations inside the R REPL. You can start from a RMarkdown file and compile a presentation you can then give directly in R!
+This package provides tools to do presentations inside the R REPL. You can start
+from a RMarkdown file and compile a presentation you can then give directly in
+R!
 
 Inspiration for this package comes from the
 [REPLesent](https://github.com/marconilanna/REPLesent) project which does the

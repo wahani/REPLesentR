@@ -21,9 +21,10 @@
 #'   method: \code{start} without any arguments. \code{start} will start the
 #'   presentation and also resume where you left.
 #'
-#' @details You can completely reconfigure or redefine parts of this package.
-#'   All components are modules and can be extended or replaced. This is just a
-#'   default configuration for a \link{Presentation}.
+#' @details
+# You can completely reconfigure or redefine parts of this package.
+#   All components are modules and can be extended or replaced. This is just a
+#   default configuration for a \link{Presentation}.
 #'
 #' To convert from Rmd to md formats \code{knitr::knit} is used. To convert from
 #'   md to plain \code{knitr::pandoc(file, format = "plain")} is used. If you
@@ -34,9 +35,15 @@
 #'   Or start a presentation and type 'h' for help.
 #'
 #' @examples
-#' ## Start with the example:
 #' \dontrun{
+#' ## Start with the example:
 #' introPresentation() # in presentation mode type 'h'
+#'
+#' ## The same presentation but with manual configuration:
+#' file <- system.file("Introduction.Rmd", package = "REPLesentR")
+#' myPresentation <- newPresentation(
+#'   file, width = 80, height = 23, border = "O", padding = 1)
+#' myPresentation$start()
 #' }
 #' @export
 newPresentation <- function(fileName, width = NULL, height = NULL, border = "*",

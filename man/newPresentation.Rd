@@ -40,10 +40,6 @@ or resumes where you left off. A presentation runs inside your R console and
 the idea is to maximize the window on your screen for a presentation mode.
 }
 \details{
-You can completely reconfigure or redefine parts of this package.
-  All components are modules and can be extended or replaced. This is just a
-  default configuration for a \link{Presentation}.
-
 To convert from Rmd to md formats \code{knitr::knit} is used. To convert from
   md to plain \code{knitr::pandoc(file, format = "plain")} is used. If you
   want to configure the process of this conversion please see the
@@ -53,8 +49,14 @@ For navigation inside the presentation mode, please see the examples below.
   Or start a presentation and type 'h' for help.
 }
 \examples{
-## Start with the example:
 \dontrun{
+## Start with the example:
 introPresentation() # in presentation mode type 'h'
+
+## The same presentation but with manual configuration:
+file <- system.file("Introduction.Rmd", package = "REPLesentR")
+myPresentation <- newPresentation(
+  file, width = 80, height = 23, border = "O", padding = 1)
+myPresentation$start()
 }
 }

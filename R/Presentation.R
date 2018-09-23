@@ -1,30 +1,30 @@
-#' Presentation Module
-#'
-#' The module to put all components together. If this is your first contact: see
-#' \link{newPresentation}. This module provides methods to construct and
-#' navigate inside presentations. All logic concerning rendering, parsing
-#' slides, evaluation of code, etc. is provided by other modules and may be
-#' modified. If you have questions feel free to file an issue on GitHub.
-#'
-#' @param fileName (fileName) see \link{newPresentation}.
-#' @param read (function) a function which knows how to read in \code{fileName}.
-#' @param render (Render) see \link{Render}.
-#' @param slideDeck (SlideDeck) see \link{SlideDeck}.
-#' @param evaluate (Evaluate) see \link{Evaluate}.
-#'
-#' @examples
-#' ## As an example consider the implementation of newPresentation:
-#' newPresentation <- function(fileName, width = NULL, height = NULL, border = "*",
-#'                            padding = 1, slideSep = rep("", 3)) {
-#'   Presentation(
-#'     fileName,
-#'     Read()$auto,
-#'     Render(Layout(border, padding), Screen(width, height)),
-#'     SlideDeck(slideSep),
-#'     Evaluate()
-#'   )
-#' }
-#' @export
+# Presentation Module
+#
+# The module to put all components together. If this is your first contact: see
+# \link{newPresentation}. This module provides methods to construct and
+# navigate inside presentations. All logic concerning rendering, parsing
+# slides, evaluation of code, etc. is provided by other modules and may be
+# modified. If you have questions feel free to file an issue on GitHub.
+#
+# @param fileName (fileName) see \link{newPresentation}.
+# @param read (function) a function which knows how to read in \code{fileName}.
+# @param render (Render) see \link{Render}.
+# @param slideDeck (SlideDeck) see \link{SlideDeck}.
+# @param evaluate (Evaluate) see \link{Evaluate}.
+#
+# @examples
+# ## As an example consider the implementation of newPresentation:
+# newPresentation <- function(fileName, width = NULL, height = NULL, border = "*",
+#                            padding = 1, slideSep = rep("", 3)) {
+#   Presentation(
+#     fileName,
+#     Read()$auto,
+#     Render(Layout(border, padding), Screen(width, height)),
+#     SlideDeck(slideSep),
+#     Evaluate()
+#   )
+# }
+# @export
 Presentation <- function(fileName, read, render, slideDeck, evaluate) {
   modules::module({
 

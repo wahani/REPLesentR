@@ -1,16 +1,16 @@
-#' Create Slide
-#'
-#' Constructs a list representing a single slide. \code{format}, \code{content},
-#' \code{number}, \code{totalNumber} and \code{code} are its elements. You
-#' should not need to call this constructor interactively but use
-#' \link{newPresentation} instead.
-#'
-#' @param rawText (character) the raw text from which to extract the contents,
-#'   code etc.
-#' @param number,totalNumber (NULL | integer) the total number of slides in the
-#'   slide deck and the number of the slide in this deck.
-#'
-#' @export
+# Create Slide
+#
+# Constructs a list representing a single slide. \code{format}, \code{content},
+# \code{number}, \code{totalNumber} and \code{code} are its elements. You
+# should not need to call this constructor interactively but use
+# \link{newPresentation} instead.
+#
+# @param rawText (character) the raw text from which to extract the contents,
+#   code etc.
+# @param number,totalNumber (NULL | integer) the total number of slides in the
+#   slide deck and the number of the slide in this deck.
+#
+# @export
 Slide <- function(rawText, number = NULL, totalNumber = NULL) {
   modules::module({
 
