@@ -1,10 +1,10 @@
 Package: REPLesentR
 Title: Presentations in the REPL
-Version: 0.2.0
+Version: 0.3.0
 Authors@R: person("Sebastian", "Warnholz",
                   email = "wahani@gmail.com", role = c("aut", "cre"))
 Description: Create presentations and display them inside the R 'REPL'
-    (Read-eval-print loop), aka the R console. Presentations can be written in
+    (Read-Eval-Print loop), aka the R console. Presentations can be written in
     'RMarkdown' or any other text format. A set of convenient navigation options
     as well as code evaluation during a presentation is provided. It is great
     for tech talks with live coding examples and tutorials. While this is not a

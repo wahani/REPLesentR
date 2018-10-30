@@ -4,3 +4,4 @@
 ^prepareRepo\.R$
 ^codecov\.yml$
 ^Readme\.md$
+^cran-comments\.md$
