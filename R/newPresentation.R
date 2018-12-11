@@ -60,7 +60,7 @@ newPresentation <- function(fileName, width = NULL, height = NULL, border = "*",
 #' @rdname newPresentation
 #' @export
 introPresentation <- function() {
-  fileName <- system.file("Introduction.Rmd", package = "REPLesentR")
-  introduction <- newPresentation(fileName)
+  introFile <- system.file("Introduction.plain", package = "REPLesentR")
+  introduction <- newPresentation(introFile)
   introduction$start()
 }

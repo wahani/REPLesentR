@@ -1,3 +1,8 @@
+Version 0.4.0
+
+- Fix in introPresentation/newPresentation for when spaces are present in file
+  paths.
+
 Version 0.3.0
 
 - Maintenance release to fix errors on CRAN.
