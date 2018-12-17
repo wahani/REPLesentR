@@ -1,6 +1,6 @@
 Package: REPLesentR
 Title: Presentations in the REPL
-Version: 0.3.1
+Version: 0.3.2
 Authors@R: person("Sebastian", "Warnholz",
                   email = "wahani@gmail.com", role = c("aut", "cre"))
 Description: Create presentations and display them inside the R 'REPL'
@@ -13,7 +13,7 @@ Description: Create presentations and display them inside the R 'REPL'
     'REPLesent' project for presentations in the 'Scala' 'REPL'.
 BugReports: https://github.com/wahani/REPLesentR/issues
 Depends: R (>= 3.4.0)
-Imports: modules, dat, tools, knitr
+Imports: modules, dat, tools, knitr (>= 1.21.2)
 Suggests:
     testthat,
     covr,

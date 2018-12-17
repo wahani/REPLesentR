@@ -15,9 +15,6 @@ Read <- function() {
 
     auto <- function(fileName, ...) {
       fileName <- normalizePath(fileName, mustWork = TRUE)
-      if (any(grepl(" ", fileName))) warning(sprintf(
-        "Detected spaces in '%s'. In case of errors, try to remove them.",
-        fileName))
       fileExt <- tolower(tools::file_ext(fileName))
       stopifnot(fileExt %in% c("plain", "md", "rmd"))
       get(fileExt, mode = "function")(fileName, ...)
