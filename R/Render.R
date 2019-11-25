@@ -58,8 +58,9 @@ Render <- function(layout, screen) {
       flatmap(content ~ format, f(content, format) ~ format(content))
     }
 
-    align.left <- function(s) {
-      strtrim(sprintf(paste0("%-", contentWidth(), "s"), s), contentWidth())
+    align.left <- function(st) {
+      filledUp <- paste0(st, paste(rep(" ", contentWidth()), collapse = ""))
+      strtrim(filledUp, contentWidth())
     }
 
     align.center <- function(s) {

@@ -2,6 +2,8 @@ Version 0.4.0
 
 - Fix in introPresentation/newPresentation for when spaces are present in file
   paths.
+- Fix for rendering. Sometimes the border lines have not been rendered
+  correctly.
 
 Version 0.3.0
 

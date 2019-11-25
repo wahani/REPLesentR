@@ -20,3 +20,20 @@ testthat::test_that("", {
   })
 
 })
+
+
+testthat::test_that("width of lines are correctly rendered", {
+  layout <- Layout()
+  screen <- Screen(80, 22)
+  render <- Render(layout, screen)
+
+  modules::extend(render, {
+    slide <- helpPage()
+    renderInformation <- prepare(slide)
+    testthat::expect_true(length(renderInformation) == 22)
+    testthat::expect_true(all(nchar(renderInformation) == 81))
+  })
+
+  render$singleSlide(helpPage())
+
+})
