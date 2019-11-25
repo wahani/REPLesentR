@@ -1,5 +1,5 @@
 ## Test environments
-* local ubuntu 18.04, R 3.5.1
+* local ubuntu 18.04, R 3.5.2
 
 ## R CMD check results
 

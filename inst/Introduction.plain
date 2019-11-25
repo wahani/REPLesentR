@@ -4,7 +4,7 @@ REPLESENTR: PRESENTATIONS INSIDE THE R REPL
 
 
 author: Sebastian Warnholz
-date: 2018-10-30
+date: 2019-11-25
 email: wahani@gmail.com
 
 
@@ -15,7 +15,7 @@ FEATURES
 -   Tools to do presentations inside the R REPL
 -   Take advantage of RMarkdown and pandoc
 -   Evaluate code on slides
--   Integrate data visualisations using the fantastic 'txtplot' package
+-   Integrate data visualisations using the fantastic ‘txtplot’ package
 
 //empty
 
@@ -30,22 +30,22 @@ FEATURES
 COMMANDS IN PRESENTATION MODE
 
 
--   n -- next slide
--   p -- previous slide
--   f -- first slide
--   l -- last slide
--   e -- evaluate code
--   ee -- evaluate code until here
--   cc -- recompile slide deck
--   q -- quit presentation
--   h -- show this help
+-   n – next slide
+-   p – previous slide
+-   f – first slide
+-   l – last slide
+-   e – evaluate code
+-   ee – evaluate code until here
+-   cc – recompile slide deck
+-   q – quit presentation
+-   h – show this help
 
 
 
 EVALUATION OF CODE
 
 
-Try this now by typing 'e'
+Try this now by typing ‘e’
 
 //code
 
@@ -71,7 +71,7 @@ SLIDE FORMATS
 SLIDE FORMATS EXAMPLES
 
 
-//center type 'e' to see the source of this slide
+//center type ‘e’ to see the source of this slide
 
 //empty
 
@@ -85,7 +85,7 @@ SLIDE FORMATS EXAMPLES
 
 
 
-//CENTER MAKE GREAT PLOTS WITH 'TXTPLOT'!
+//CENTER MAKE GREAT PLOTS WITH ‘TXTPLOT’!
 
 
         +-----+-----------+----------+-----------+-----------+-+
@@ -109,7 +109,7 @@ SLIDE FORMATS EXAMPLES
 START FROM AN EXAMPLE
 
 
-You can find the source of this presentation by typing 'e':
+You can find the source of this presentation by typing ‘e’:
 
 //code
 
