@@ -26,16 +26,6 @@ Read <- function() {
     }
 
     md <- function(fileName, ...) {
-      # By request from Brian Ripley (2019-11-25) and 'Writing R Extensions' we
-      # have to use pandoc conditionally. This already happens in knitr::pandoc
-      # which is why I have never included a test like this into this function.
-      # For a lack of better ideas, I copied the exact two lines from
-      # knitr::pandoc and included them here to comply to this requirement.
-      # -- begin knitr::pandoc
-      exec <- tryCatch(rmarkdown::pandoc_exec(), error = function(e) Sys.which("pandoc"))
-      if (length(exec) != 1 || exec == "")
-        stop("Please install Pandoc (https://pandoc.org)")
-      # -- end knitr::pandoc
       stopifnot(file.exists(fileName))
       plainFile <- knitr::pandoc(fileName, format = "plain")
       plain(plainFile)
